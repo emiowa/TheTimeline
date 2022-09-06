@@ -11,6 +11,7 @@ function createTimeline(number){
 
 function addYears(yearsToAdd){
     let newP = document.createElement("p");
+    newP.setAttribute("class", `${yearsToAdd}`);
     let newText = document.createTextNode(yearsToAdd);
     newP.append(newText);
     newDiv.append(newP);

@@ -1,38 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body{
   margin: auto;
-  width: 90%;
+  width: 95%;
   height: 100vh;
 }
 
 div.header{
-  height: 10%;
+  height: 110px;
 }
 
 h1{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Noto Serif HK', sans-serif;
+  font-weight: 900;
   text-align: center;
-  font-size: 70px;
+  font-size: 60px;
   margin: 0px;
-  color: #FBC403;
+  color: #242424;
 }
 
-p.intro{
+h3.intro{
   margin-top: 0px;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
+  font-weight: 100;
   text-align: center;
-  font-size: 20px;
-  color: #FBC403;
+  font-size: 18px;
+  color: #242424;
 }
 
-.timeline{
+div.timeline{
   display: flex;
   justify-content: center;
-  cursor: pointer;
+  height: calc(100vh - 110px);
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation{
+  0%{
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 p{
-  padding: 0px 40px;
-  font-size: 40px;
+  position: relative;
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1px #242424;
+  font-size: 50px;
+  font-weight: 800;
+  font-family: sans-serif;
+  margin: auto;
+}
+
+p:before, p:after{
+  content: attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+p:hover:before{
+  color: #04777E;
+  z-index: 1;
+  -webkit-text-stroke: 1px #242424;
+  transform: translate(5px, -5px);
+}
+
+p:hover:after{
+  color: #f2c939;
+  z-index: 2;
+  -webkit-text-stroke: 1px #242424;
+  transform: translate(10px, -10px);
+}
+
+p:hover{
+  color: white;
+  -webkit-text-stroke: 1px black;
+  cursor: pointer;
+  transition: 0.5s;
 }
